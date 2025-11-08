@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu - LogoShop</title>
+    <!-- Dùng cùng style với trang shop chính -->
+    <link rel="stylesheet" href="shop.css">
+    <style>
+        /* Một vài tinh chỉnh nhỏ cho trang giới thiệu */
+        .about-container{ max-width:1000px; margin:28px auto; padding:22px; background:#fff; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+        .about-hero{ display:flex; gap:18px; align-items:center; margin-bottom:18px; }
+        .about-hero img{ width:120px; height:120px; object-fit:cover; border-radius:8px; border:2px solid rgba(0,0,0,0.06); }
+        .about-hero h2{ margin:0; color:#db2727; }
+        .about-grid{ display:grid; grid-template-columns:1fr 320px; gap:18px; align-items:start; }
+        .info-box{ background:linear-gradient(180deg,#fff,#fff); padding:14px; border-radius:8px; }
+        @media(max-width:900px){ .about-grid{ grid-template-columns:1fr; } .about-hero{flex-direction:row;} }
+    </style>
+</head>
+<body>
+    <!-- Dùng header như trang chính để giữ đồng nhất -->
+    <header>
+        <div class="header-top">
+            <div class="brand">
+                <img src="img/avt.jpg" alt="LogoShop" class="logo" onerror="this.style.display='none'">
+                <span class="brand-name">LogoShop</span>
+            </div>
+        </div>
+        <section class="banner">
+            <h1> Shop Cafe giản dị</h1>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="shopcf.html">Thực Đơn</a></li>
+                <li><a href="uudai.html">Khuyến mãi</a></li>
+                <li><a href="tuyennv.html">Tuyển dụng</a></li>
+                <li><a href="lien-he.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="about-container">
+            <div class="about-hero">
+                <img src="img/avt.jpg" alt="LogoShop" onerror="this.style.display='none'">
+                <div>
+                    <h2>Quán cafe giản dị</h2>
+                    <p style="margin-top:8px; color:#555;">Ly cà phê thơm ngon, rẻ phù hợp với bất kỳ ai </p>
+            </div>
+
+            <div class="about-grid">
+                <div>
+                    <section class="info-box">
+                        <h3 style="color:#db2727; margin-top:0;">Sứ mệnh</h3>
+                        <p>Mang hương vị cà phê tới nhiều người.</p>
+                    </section>
+
+                    <section class="info-box" style="margin-top:12px;">
+                        <h3 style="color:#db2727; margin-top:0;">Giờ mở cửa</h3>
+                        <ul>
+                            <li>Thứ Hai - Chủ Nhật: 07:00 - 21:30</li>
+                            <li>Giao hàng: 08:00 - 20:30</li>
+                        </ul>
+                    </section>
+
+                    <section class="info-box" style="margin-top:12px;">
+                        <h3 style="color:#db2727; margin-top:0;">Cam kết</h3>
+                        <ul>
+                            <li>Nguyên liệu từ thiên nhiên</li>
+                            <li>Mở hàng cafe có kinh nghiệm 10 năm</li>
+                            <li>Ưu đãi cho khách hàng thân thiết.</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <aside>
+                    <div class="info-box">
+                        <h3 style="color:#db2727; margin-top:0;">Liên hệ nhanh</h3>
+                        <p>Địa chỉ: 123 Đường Bạch Đằng, Hà Nội</p>
+                        <p>Hotline: <strong>0111 111 111</strong></p>
+                        <p>Email: <a href="shoptui@gmail.com">shoptui@gmail.com</a></p>
+                        <p style="margin-top:8px;"><a href="shopcf.html" style="color:#e24a4a; font-weight:700; text-decoration:none;">Xem menu</a></p>
+                    </div>
+            </div>
+        </div>
+    </main>
+        <!-- Footer -->
+    <footer>
+        <p>&copy; <span>2025</span> Shop Cafe-Le Ank</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trangchu</title>
+    <style>
+    /* ... các style ... */
+    /* Đặt trang chiếm chiều cao đầy đủ và bố cục theo cột để footer luôn nằm ở cuối */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #4A90E2, #ff4d4d , white);
+      background-size: cover;
+      background-attachment: fixed;
+      color: #333;
+
+      /* Cập nhật bố cục */
+      min-height: 100vh;       /* chiếm toàn bộ chiều cao viewport */
+      display: flex;
+      flex-direction: column;  /* xếp header/main/footer theo chiều dọc */
+      align-items: center;     /* căn giữa .container theo chiều ngang */
+    }
+
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      margin: 40px 0;
+      border-radius: 15px;
+
+      /* cho phép container phồng/giãn để đẩy footer xuống dưới */
+      flex: 1 0 auto;
+    }
+
+    header {
+      background: linear-gradient(to right, #e24a4a, #c25050);
+      color: white;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-radius: 10px;
+    }
+    .avatar-box {
+        display:flex; 
+        justify-content:center; 
+        align-items:center; 
+    }
+
+    .avatar { 
+        width:150px;
+        height:150px;
+        border-radius:50%;
+        object-fit:cover;
+        box-shadow:0 4px 10px rgba(0,0,0,0.2);
+        transition:transform 0.3s ease; 
+        display:block; 
+    }
+
+    .avatar:hover { 
+        transform: scale(1.1); 
+    }
+
+    .intro { 
+        flex:1; 
+    }
+    .social-links { 
+        margin-top:10px; 
+    }
+
+    .social-links a { 
+        color:white; 
+        text-decoration:none; 
+        margin-right:15px; 
+        font-weight:bold; 
+    }
+
+    .social-links a:hover { 
+        text-decoration:underline;
+    }
+    section { 
+        margin:40px 0; 
+        padding:20px; 
+        background:#fff; 
+        border-radius:10px; 
+        box-shadow:0 2px 8px rgba(0,0,0,0.05); 
+        transition:box-shadow 0.3s ease; 
+    }
+
+    section:hover { 
+        box-shadow:0 4px 12px rgba(0,0,0,0.1); 
+    }
+    .skills { 
+        display:flex; 
+        flex-wrap:wrap; 
+        gap:10px; 
+        margin-top:15px; 
+    }
+
+    .skill-tag { 
+        background:linear-gradient(to right, #e24a4a, #c25050); 
+        color:white; 
+        padding:8px 18px; 
+        border-radius:25px; 
+        font-size:0.95em; 
+        font-weight:bold; 
+        box-shadow:0 2px 5px rgba(0,0,0,0.1); 
+    }
+
+    .achievements { 
+        list-style-type:none; 
+        padding:0; 
+    }
+
+    .achievements li { 
+        margin:10px 0; 
+        padding-left:20px; 
+        position:relative; 
+    }
+    .achievements li:before { 
+        content:"✓"; 
+        color:#4CAF50; 
+        position:absolute; 
+        left:0; 
+    }
+
+    #du-an ul li { 
+        background:#f9f9f9; 
+        padding:15px; 
+        border-radius:8px; 
+        box-shadow:0 2px 5px rgba(0,0,0,0.1); 
+        margin-bottom:10px; 
+    }
+
+    form input, form textarea { 
+        width:100%; 
+        padding:10px; 
+        margin-top:5px; 
+        margin-bottom:15px; 
+        border:1px solid #ccc; 
+        border-radius:5px; 
+    }
+
+    form button { 
+        background-color:#e24a4a; 
+        color:white; padding:10px 20px; 
+        border:none; border-radius:5px; 
+        cursor:pointer; }
+
+    form button:hover { 
+        background-color:#bd3535; 
+    }
+
+    #gioi-thieu { 
+        text-align:center; 
+        position:relative; 
+        overflow:hidden;
+         padding:30px 20px; 
+         background:linear-gradient(to right, #ffffff, #e6f0ff); 
+         border-radius:10px; 
+         box-shadow:0 2px 8px rgba(0,0,0,0.05); 
+        }
+
+    .typing { 
+        font-size:1.1em; 
+        font-weight:500; 
+        border-right:3px solid #e24a4a; 
+        white-space:nowrap; 
+        overflow:hidden;
+        width:0; 
+        animation:blink 0.75s step-end infinite;
+        margin:0 auto; 
+        text-align:center; 
+        max-width:100%; 
+    }
+
+    @keyframes blink { from, to { 
+        border-color: transparent } 50% { border-color: #e24a4a } 
+    }
+
+    @media (max-width:768px){ 
+        header { flex-direction:column; text-align:center; } 
+        .skills { flex-direction:column; align-items:center; } 
+        .social-links { justify-content:center; flex-wrap:wrap; } 
+        .container { margin:20px 10px; padding:15px; } 
+    }
+    /* Nút trang shop */
+    .shop-link { 
+        display:inline-block; 
+        margin-top:12px; 
+        padding:10px 14px; 
+        background:linear-gradient(90deg,#e24a4a,#7384f3); 
+        color:white; 
+        border-radius:8px; 
+        text-decoration:none; 
+        font-weight:700; 
+    }
+
+    /* Kiểu footer: giữ footer ở cuối trang và khớp chiều rộng với container */
+    .footer {
+        text-align: center;
+        padding: 18px;
+        background: linear-gradient(to right, #e24a4a, #c25050);
+        color: white;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 1000px;
+        margin: 20px 0 40px; /* khoảng cách dọc */
+        flex-shrink: 0; /* không co nhỏ footer */
+    }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+    <header>
+        <div class="avatar-box">
+            <img src="img/a.jpg" alt="" class="avatar">
+        </div>
+        <div class="intro">
+            <h1>Mr.Lê Anh</h1>
+            <p>Ngành CNTT | Lớp HTTT 19-01 </p>
+            <p>Địa chỉ : Đường Bạch Đằng | Số 111</p>
+            <p>Sđt: 0967732111 | Email: nvd@gmail.com </p>
+
+            <div class="social-links">
+                <!-- Liên kết tới trang khác -->
+                <a href="shopcf.html" class="shop-link">Shop Cafe</a>
+                <a href="#">Game</a>
+                <a href="https://www.facebook.com/le.ucanh.587598">FB</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="">
+        <h2>Giới thiệu</h2>
+        <p>Xin chào! Tôi là Lê Anh, sinh viên ngành CNTT. Tôi thích tìm hiểu về lập trình và thiết kế web.</p>
+        <p>Tôi có kỹ năng cơ bản về HTML, CSS và đang học thêm Java.</p>
+    </section>
+
+    <section id="">
+        <h2>Kỹ Năng</h2>
+            <div class="skills">
+                <div class="skill-tag">HTML và CSS cơ bản</div>
+                <div class="skill-tag">GitHub</div>
+                <div class="skill-tag">JavaScript</div>
+            </div>
+        <b><p>Bài được học gần đây:</p></b>
+        <ul>
+            <li>Học các thẻ HTML cơ bản </li>
+            <li>Up dữ liệu code lên github</li>
+            <li>Chuẩn bị tạo tên miền riêng</li>
+        </ul>
+    </section>
+
+    <section id="">
+        <h2>Dự án</h2>
+        <ul>
+            <li>Chuẩn bị cho bài tập lớn</li>
+            <li>Học cách tạo trang web cá nhân</li>
+            <li>Học cách sử dụng web tên miền</li>
+        </ul>
+    </section>
+    </div>
+
+    <!-- Footer (nằm ngoài .container để luôn ở cuối) -->
+    <footer class="footer">
+        <div>
+            © <span id="year"></span> Mr.Lê Anh - WEB trang cá nhân
+        </div>
+    </footer>
+
+    <script>
+      // Tự động cập nhật năm
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
